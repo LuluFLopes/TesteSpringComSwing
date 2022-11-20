@@ -15,6 +15,7 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -30,11 +31,10 @@ public class TelaInicial extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        mnuFuncionario = new javax.swing.JMenu();
+        mnuCadastrar = new javax.swing.JMenuItem();
+        mnuAltExclu = new javax.swing.JMenuItem();
+        mnuSair = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -44,41 +44,34 @@ public class TelaInicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu2.setText("Funcionarios");
+        mnuFuncionario.setText("Funcionarios");
+        mnuFuncionario.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        jMenuItem2.setText("jMenuItem2");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        mnuCadastrar.setText("Cadastrar");
+        mnuCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                mnuCadastrarActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        mnuFuncionario.add(mnuCadastrar);
 
-        jMenuItem4.setText("jMenuItem4");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        mnuAltExclu.setText("Alterar / Excluir");
+        mnuAltExclu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                mnuAltExcluActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        mnuFuncionario.add(mnuAltExclu);
 
-        jMenuItem5.setText("jMenuItem5");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        mnuSair.setText("Sair");
+        mnuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                mnuSairActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem5);
+        mnuFuncionario.add(mnuSair);
 
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Sair");
-        jMenu3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu3ActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(mnuFuncionario);
 
         setJMenuBar(jMenuBar1);
 
@@ -86,31 +79,29 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 465, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+    private void mnuCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCadastrarActionPerformed
+        Cadastrar cadastrar = new Cadastrar();
+        cadastrar.setVisible(true);
+    }//GEN-LAST:event_mnuCadastrarActionPerformed
+
+    private void mnuAltExcluActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAltExcluActionPerformed
+        TelaIntermediaria intermediaria =  new TelaIntermediaria();
+        intermediaria.setVisible(true);
+    }//GEN-LAST:event_mnuAltExcluActionPerformed
+
+    private void mnuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSairActionPerformed
         this.dispose();
-    }//GEN-LAST:event_jMenu3ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_mnuSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,13 +140,12 @@ public class TelaInicial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem mnuAltExclu;
+    private javax.swing.JMenuItem mnuCadastrar;
+    private javax.swing.JMenu mnuFuncionario;
+    private javax.swing.JMenuItem mnuSair;
     // End of variables declaration//GEN-END:variables
 }
