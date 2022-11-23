@@ -1,5 +1,6 @@
 package projeto.oo.func.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import projeto.oo.func.model.Desenvolvedor;
 import projeto.oo.func.repository.DesenvolvedorRepository;
@@ -12,19 +13,12 @@ import java.util.Optional;
 @Transactional
 public class CrudDesenvolvedorService {
 
+    @Autowired
     private DesenvolvedorRepository desenvolvedorRepository;
 
-    public CrudDesenvolvedorService(DesenvolvedorRepository desenvolvedorRepository) {
-        this.desenvolvedorRepository = desenvolvedorRepository;
-    }
+    public void salvar(Desenvolvedor d) {desenvolvedorRepository.saveAndFlush(d);}
 
-    public void salvar(Desenvolvedor d) {
-        desenvolvedorRepository.save(d);
-    }
-
-    public void atualizar(Desenvolvedor d) {
-        desenvolvedorRepository.save(d);
-    }
+    public void atualizar(Desenvolvedor d) {desenvolvedorRepository.saveAndFlush(d);}
 
     public void excluir(Integer id) {
         desenvolvedorRepository.deleteById(id);
@@ -40,6 +34,4 @@ public class CrudDesenvolvedorService {
         Desenvolvedor desenvolvedor = (Desenvolvedor) op.get();
         return desenvolvedor;
     }
-
-
 }

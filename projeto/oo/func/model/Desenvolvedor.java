@@ -9,6 +9,10 @@ public class Desenvolvedor extends Funcionario implements HoraExtra {
         super(nome, idade, salario, cargo);
     }
 
+    public Desenvolvedor(Integer id,String nome, int idade, double salario, String cargo) {
+        super(nome, idade, salario, cargo);
+    }
+
     public Desenvolvedor() {
     }
 

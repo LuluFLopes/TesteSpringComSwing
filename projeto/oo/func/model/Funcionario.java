@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "funcionarios")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Funcionario {
 
     @Id
@@ -50,6 +51,11 @@ public abstract class Funcionario {
         setSalario(getSalario() * 1.2);
     }
 
+
+    public Integer getId() {
+        return id;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -82,4 +88,7 @@ public abstract class Funcionario {
         this.cargo = cargo;
     }
 
+    public String getStategia() {
+        return stategia;
+    }
 }

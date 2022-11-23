@@ -6,4 +6,7 @@ import projeto.oo.func.model.Desenvolvedor;
 
 @Repository
 public interface DesenvolvedorRepository extends JpaRepository<Desenvolvedor, Integer> {
+
+    Desenvolvedor findByNome(String nome);
+
 }
